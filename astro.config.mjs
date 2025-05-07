@@ -21,6 +21,6 @@ export default defineConfig({
     drafts: true
   },
   site: 'https://mp-714.github.io',
-  // base: 'Static-Demo',
+  base: 'Static-Demo',
   integrations: [sitemap(), mdx()]
 });

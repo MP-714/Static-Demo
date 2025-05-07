@@ -20,6 +20,7 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   },
-  site: 'https://mp-714.github.io/Static-Demo/',
+  site: 'https://mp-714.github.io',
+  // base: 'Static-Demo',
   integrations: [sitemap(), mdx()]
 });

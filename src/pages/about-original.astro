@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "About Me";
 
@@ -25,7 +24,16 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		 <title>{pageTitle}</title> 
+         <!-- Use these variables in your Astro template 
+              inside curly braces { } to tell Astro you’re using some JavaScript. -->
+	
 
               <!-- Define and pass the JS Varibles to the Style Tag -->
             <style  define:vars={{skillColor, fontWeight, textCase}}>
@@ -43,11 +51,17 @@ const textCase = "uppercase";
             </style>
     
     
-    <BaseLayout pageTitle={pageTitle}>
+    </head>
+	<body>
+        <header>
+            <h1>{pageTitle}</h1>
+            <nav>
+               <Navigation>
+            </nav>
             
 		
         <p>Welcome to my blog! I am excited to share my thoughts and experiences with you.</p>
-        
+        </header>
 
         <main>
             
@@ -73,8 +87,45 @@ const textCase = "uppercase";
             {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
 
+
+
+
+
+            <br />
+
+
+
+
+            <!-- My Personal Addtion - not part of tutorial -->
+            <!-- <section>
+               <p>My name is Lisa Patterson, and I am a web developer.</p>
+                <p>I have a passion for creating beautiful and functional websites.</p>
+                <p>I enjoy learning new technologies and improving my skills.</p>
+                <p>In my free time, I like to read books, travel, and spend time with my family and friends.</p>
+                <p>My goal is to become a full-stack developer and work on exciting projects.</p>
+                <p>Thank you for visiting my blog!</p>
+            </section>
+
+            <section>
+                <h2>My Interests</h2>
+
+            </section> -->
+
+            
+  <!-- <h1>My Astro Site</h1>
+  
+  <h2>... and my new Astro site!</h2>
+
+  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+
+  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p> -->
+
+
+
         </main>
-       </BaseLayout>
+        <footer>    
+            <Footer />
+        </footer>
 
           <script>
     import "../scripts/menu.js";
